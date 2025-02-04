@@ -90,7 +90,18 @@ const nycPlaces = [
     console.log(req.method + " " + req.path)
     next()
   })
+  app.use(express.static(__dirname + "/public"))
   
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html")
+})
+
+  app.get("/all", (req, res) => {
+    res.render("all.ejs", nycPlaces)
+  })
+  app.get("/place", (req, res) => {
+    res.render("place.ejs", nycPlaces[0])
+  })
  
   app.listen(3000, () => {
     console.log("Server running")

@@ -8,15 +8,19 @@
 </head>
 <body>
     <h1>Explore All Places in NYC</h1>
+    <% for (let i = 0; i< nycPlaces.length; i++){ %>
     <div class="container">
         <div class="card" onclick="window.location.href='/place-detail.html'">
-            <img src="https://example.com/central-park.jpg" alt="Central Park">
+            <img src="<%=imageURl%>" alt="<%=name%>">
             <div class="card-content">
-                <h2>Central Park</h2>
-                <p><strong>Username:</strong> travelNYClover</p>
-                <p><strong>Location:</strong> Manhattan, NY</p>
+                <h2><%=nycPlaces[i].placeName%></h2>
+                <p><strong>Username:</strong> <%=nycPlace.[i].username%></p>
+                <p><strong>Location:</strong> <%=nycPlace[i].location%></p>
             </div>
         </div>
+        
+        
     </div>
+    <% } %>
 </body>
 </html>
