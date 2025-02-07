@@ -9,9 +9,18 @@
 
 <body>
     <div class="container">
-        <h1>Welcome to Discover NYC</h1>
-        <p>Your go-to guide for the best places to visit in New York City! Whether you're looking for iconic landmarks, hidden gems, or the best spots to eat and shop, we have you covered.</p>
-        <a href="/all">Explore All Places</a>
+        <h1><%=placeName%></h1>
+        <img src = "<%=imageURL%>" >
+        <h4><%=location%></h4>
+        <h5>Stores and Restaurants: <%=storesAndRestaurants%></h5>
+        <p><%=description%></p>
+        <% if(status == "Open") { %>
+         <h4>Status: Yesss <%=placeName%> is currenly open read to visit!!!!</h4>
+        <% }else{ %>
+           <h4>Sorry: <%=placeName%> is currently closed come back tomorrow!!!!</h4>
+        <% } %>
+        
+        
     </div>
 </body>
 </html>
